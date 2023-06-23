@@ -2,16 +2,12 @@
 require_once 'Input.php';
 class TextInput extends Input
 {
-    protected $name;
-    protected $label;
-    protected $value;
-
     /* Implement the validation logic for the TextInput
     * You can customize the validation rules according to your requirements
     */
     public function validate()
     {
-        return !empty($this->value);
+        return !empty($this->_initVal);
     }
     /* Implement the rendering of any additional settings for the TextInput
      * This method is intended to be used by subclasses for customization
@@ -20,19 +16,19 @@ class TextInput extends Input
      */
     protected function _renderSetting()
     {
-        echo '<input class="form-input" type="text" name="' . $this->name . '" id="' . $this->name . '" value="' . $this->value . '" class="custom-class">';
+        echo '<input class="form-input" type="text" name="' . $this->_name . '" id="' . $this->_name . '" value="' . $this->_initVal . '" class="custom-class">';
     }
 
     public function __construct($name, $label, $value = '')
     {
-        $this->name = $name;
-        $this->label = $label;
-        $this->value = $value;
+        $this->_name = $name;
+        $this->_label = $label;
+        $this->_initVal = $value;
     }
 
     public function render()
     {
-        echo '<label class="form-label" for="' . $this->name . '">' . $this->label . '</label>';
-        echo '<input class="form-input" type="text" name="' . $this->name . '" id="' . $this->name . '" value="' . $this->value . '">';
+        echo '<label class="form-label" for="' . $this->_name . '">' . $this->_label . '</label>';
+        echo '<input class="form-input" type="text" name="' . $this->_name . '" id="' . $this->_name . '" value="' . $this->_initVal . '">';
     }
 }

@@ -51,7 +51,7 @@ class Form
      */
     public function display()
     {
-        echo '<form class="form-container">';
+        echo '<form class="form-container" action="Sample.php" method="post">';
 
         foreach ($this->_inputs as $input) {
             echo '<div>';
