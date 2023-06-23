@@ -20,7 +20,7 @@ class TextInput extends Input
      */
     protected function _renderSetting()
     {
-        echo '<input type="text" name="' . $this->name . '" id="' . $this->name . '" value="' . $this->value . '" class="custom-class">';
+        echo '<input class="form-input" type="text" name="' . $this->name . '" id="' . $this->name . '" value="' . $this->value . '" class="custom-class">';
     }
 
     public function __construct($name, $label, $value = '')
@@ -32,7 +32,7 @@ class TextInput extends Input
 
     public function render()
     {
-        echo '<label for="' . $this->name . '">' . $this->label . '</label>';
-        echo '<input type="text" name="' . $this->name . '" id="' . $this->name . '" value="' . $this->value . '">';
+        echo '<label class="form-label" for="' . $this->name . '">' . $this->label . '</label>';
+        echo '<input class="form-input" type="text" name="' . $this->name . '" id="' . $this->name . '" value="' . $this->value . '">';
     }
 }

@@ -1,3 +1,16 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sample Form</title>
+    <link rel="stylesheet" type="text/css" href="Sample.css">
+</head>
+
+<body>
+</body>
+
+</html>
+
 <?php
 
 require_once 'Form.php';
@@ -21,3 +34,5 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 } else {
     $form->display();
 }
+
+?>

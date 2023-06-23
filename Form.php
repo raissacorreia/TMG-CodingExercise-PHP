@@ -51,7 +51,7 @@ class Form
      */
     public function display()
     {
-        echo '<form>';
+        echo '<form class="form-container">';
 
         foreach ($this->_inputs as $input) {
             echo '<div>';
@@ -59,7 +59,7 @@ class Form
             echo '</div>';
         }
 
-        echo '<input type="submit" value="Submit">';
+        echo '<input type="submit" value="Submit" class="submit-button">';
         echo '</form>';
     }
 }
