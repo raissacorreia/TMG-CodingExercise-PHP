@@ -22,7 +22,13 @@ class Form
      */
     public function validate()
     {
-        // TODO
+        foreach ($this->_inputs as $input) {
+            if (!$input->validate()) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     /**
@@ -30,7 +36,14 @@ class Form
      */
     public function getValue($name)
     {
-        // TODO
+        foreach ($this->_inputs as $input) {
+            if ($input->name() === $name) {
+                return $input->getValue();
+            }
+        }
+
+        // If input with the specified name is not found
+        return null;
     }
 
     /**
@@ -38,6 +51,15 @@ class Form
      */
     public function display()
     {
-        // TODO
+        echo '<form>';
+
+        foreach ($this->_inputs as $input) {
+            echo '<div>';
+            $input->render();
+            echo '</div>';
+        }
+
+        echo '<input type="submit" value="Submit">';
+        echo '</form>';
     }
 }

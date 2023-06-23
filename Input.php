@@ -1,5 +1,6 @@
 <?php
-abstract class Input {
+abstract class Input
+{
     protected $_name;
     protected $_label;
     protected $_initVal;
@@ -7,15 +8,19 @@ abstract class Input {
     abstract public function validate();
     abstract protected function _renderSetting();
 
-    public function __construct($name, $label, $initVal) {
-        //
+    public function __construct($name, $label, $initVal)
+    {
+        $this->_name = $name;
+        $this->_label = $label;
+        $this->_initVal = $initVal;
     }
 
     /**
      * returns the name of this input
      */
-    public function name() {
-        // TODO
+    public function name()
+    {
+        return $this->_name;
     }
 
 
@@ -23,14 +28,17 @@ abstract class Input {
      *  renders a row in the form for this input. All inputs have a label on the left, and an area on the right where the actual
      *  html form element is displayed (such as a text box, radio button, select, etc)
      */
-    public function render() {
-        // TODO
+    public function render()
+    {
+        echo '<label for="' . $this->_name . '">' . $this->_label . '</label>';
+        $this->_renderSetting();
     }
 
     /**
      * returns the current value managed by this input
      */
-    public function getValue() {
-        // TODO
+    public function getValue()
+    {
+        return $this->_initVal;
     }
 }
