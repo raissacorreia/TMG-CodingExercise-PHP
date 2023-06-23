@@ -1,2 +1,0 @@
-- Add the submission calling the post method
-- add a validation visual tip on the form
