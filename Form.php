@@ -53,20 +53,59 @@ class Form
      */
     public function display()
     {
-        $file = 'Sample.php';
-        if (file_exists($file)) {
-            echo '<form class="form-container" action="Sample.php" method="post">';
-
-            foreach ($this->_inputs as $input) {
-                echo '<div class="input-container">';
-                $input->render();
-                echo '</div>';
-            }
-
-            echo '<input type="submit" value="Submit" class="submit-button">';
-            echo '</form>';
-        } else {
-            echo "The file does not exist.";
+        echo '
+            <style>
+                .form-container {
+                    margin: 1rem auto;
+                    padding: 1rem;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    height: 210px;
+                }
+            </style>
+            <form
+                class="form-container"
+                action="Sample.php"
+                method="post">
+            ';
+        foreach ($this->_inputs as $input) {
+            echo '
+                <style>
+                    .input-container {
+                        display: flex;
+                        flex-direction: column;
+                        margin-bottom: 1rem;
+                        height: 65px;
+                    }
+                </style>
+                <div class="input-container">
+            ';
+            $input->render();
+            echo '</div>';
         }
+
+        echo '
+        <style>
+            .submit-button {
+                display: block;
+                height: 40px;
+                width: 100%;
+                padding: 10px;
+                background-color: #4caf50;
+                color: white;
+                font-size: 16px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+            .submit-button:hover {
+                background-color: #45a049;
+            }
+            .submit-button:active {
+                background-color: #3c903c;
+            }
+        </style>
+        <input type="submit" value="Submit" class="submit-button">';
+        echo '</form>';
     }
 }

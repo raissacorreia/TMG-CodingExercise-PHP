@@ -1,19 +1,12 @@
 # Thing that were done and why
 
-- For styling, I used simple css files separated for better readability and maintenance. They're imported on the HTML code
-   that is echoed by each PHP function.
-- I always verified the existence of something before using it, to avoid server crashing errors, the biggest ones are:
+- For styling, I used inline css so the components that be reused elsewhere like a lib of components. I also did the css file and its imported is commented because it's easier and more legible to code like that to debug and then copying to the inline version.
+- I also added the code to always verify the existence of something before using it, to avoid server crashing errors, such as:
 
 Sample.php
 
 ```php
 isset($_SERVER['REQUEST_METHOD'])
-```
-
-Form.php
-
-```php
-$file = 'Sample.php'; if (file_exists($file)) {
 ```
 
 - Other items that was also done are further explained by the comments above the methods.

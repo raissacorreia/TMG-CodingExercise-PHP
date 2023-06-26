@@ -3,7 +3,8 @@
 
 <head>
     <title>Sample Form</title>
-    <link rel="stylesheet" type="text/css" href="Sample.css">
+    <!-- Before inline styles -->
+    <!-- <link rel="stylesheet" type="text/css" href="Sample.css"> -->
 </head>
 
 <body>
