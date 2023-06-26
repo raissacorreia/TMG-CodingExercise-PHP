@@ -9,6 +9,7 @@ class TextInput extends Input
     {
         return !empty($this->_initVal);
     }
+
     /* Implement the rendering of any additional settings for the TextInput
      * This method is intended to be used by subclasses for customization
      * You can add additional HTML markup or settings specific to the TextInput

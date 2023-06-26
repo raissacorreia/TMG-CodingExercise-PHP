@@ -44,7 +44,6 @@ class Form
             }
         }
 
-        // If input with the specified name is not found
         return null;
     }
 
