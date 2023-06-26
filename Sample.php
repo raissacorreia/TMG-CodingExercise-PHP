@@ -24,7 +24,6 @@ $form->addInput(new TextInput("lastname", "Last Name", "Wayne"));
 
 if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == "POST") {
     if ($form->validate()) {
-        // display user info
         $firstName = $form->getValue("firstname");
         $lastName = $form->getValue("lastname");
         echo $firstName . " " . $lastName;
