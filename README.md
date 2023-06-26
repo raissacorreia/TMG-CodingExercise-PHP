@@ -15,3 +15,14 @@ isset($_SERVER['REQUEST_METHOD'])
 
 - Validation on form fields. What is harmful or undesired as prompt depends on the context and the quality of the API that is receiving such data, therefore the validation is just that both fields need to be filled.
 - Only the stubbed methods: As specified on instructions "create a TextInput.php class in addition to filling out the stubbed methods for the library", because the idea was to fill the TODOs I didn't add more classes to have a more complete form template, and sticked to the basics. As a consequence the only OOP principle that was applicable was class abstraction
+
+# Running
+
+at the project folder I run the following command:
+php -S localhost:8000 -f Sample.php
+
+at another folder created a Sample2 to test the css customization on the component consumer:
+php -S localhost:8001 -f Sample2.php
+
+or to just simple and quick debug, specially in the beginning:
+php Sample.php
