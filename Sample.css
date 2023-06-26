@@ -1,18 +1,22 @@
-/* styles.css */
-
 /* Form container */
 .form-container {
-  max-width: 20rem;
   margin: 1rem auto;
   padding: 1rem;
   border: 1px solid #ccc;
   border-radius: 4px;
+  height: 210px;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  height: 65px;
 }
 
 /* Form input fields */
 .form-input {
   display: block;
-  width: 18rem;
   padding: 10px;
   margin-bottom: 10px;
   font-size: 16px;
@@ -36,6 +40,7 @@
 /* Submit button */
 .submit-button {
   display: block;
+  height: 40px;
   width: 100%;
   padding: 10px;
   background-color: #4caf50;
@@ -52,4 +57,8 @@
 
 .submit-button:active {
   background-color: #3c903c;
+}
+
+.submit-button:disabled {
+  background-color: #cccccc;
 }

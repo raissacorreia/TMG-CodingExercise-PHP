@@ -58,7 +58,7 @@ class Form
             echo '<form class="form-container" action="Sample.php" method="post">';
 
             foreach ($this->_inputs as $input) {
-                echo '<div>';
+                echo '<div class="input-container">';
                 $input->render();
                 echo '</div>';
             }
