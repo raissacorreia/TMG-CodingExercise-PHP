@@ -10,7 +10,8 @@ class Form
     }
 
     /**
-     *  adds an input instance to the collection of inputs managed by this form object
+     *  adds an input instance to the collection of inputs managed by this 
+     * form object
      */
     public function addInput(Input $input)
     {
@@ -18,7 +19,8 @@ class Form
     }
 
     /**
-     *  iterates over all inputs managed by this form and returns false if any of them don't validate
+     *  iterates over all inputs managed by this form and returns false if 
+     * any of them don't validate
      */
     public function validate()
     {
@@ -37,7 +39,7 @@ class Form
     public function getValue($name)
     {
         foreach ($this->_inputs as $input) {
-            if ($input->name() === $name) {
+            if ($input->getName() === $name) {
                 return $input->getValue();
             }
         }
@@ -51,15 +53,20 @@ class Form
      */
     public function display()
     {
-        echo '<form class="form-container" action="Sample.php" method="post">';
+        $file = 'Sample.php';
+        if (file_exists($file)) {
+            echo '<form class="form-container" action="Sample.php" method="post">';
 
-        foreach ($this->_inputs as $input) {
-            echo '<div>';
-            $input->render();
-            echo '</div>';
+            foreach ($this->_inputs as $input) {
+                echo '<div>';
+                $input->render();
+                echo '</div>';
+            }
+
+            echo '<input type="submit" value="Submit" class="submit-button">';
+            echo '</form>';
+        } else {
+            echo "The file does not exist.";
         }
-
-        echo '<input type="submit" value="Submit" class="submit-button">';
-        echo '</form>';
     }
 }

@@ -18,14 +18,15 @@ abstract class Input
     /**
      * returns the name of this input
      */
-    public function name()
+    public function getName()
     {
         return $this->_name;
     }
 
 
     /**
-     *  renders a row in the form for this input. All inputs have a label on the left, and an area on the right where the actual
+     *  renders a row in the form for this input. All inputs have a label on the left,
+     *  and an area on the right where the actual
      *  html form element is displayed (such as a text box, radio button, select, etc)
      */
     public function render()
