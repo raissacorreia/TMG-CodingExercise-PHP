@@ -2,7 +2,7 @@
 
 ## What was done
 
-- For styling, I used inline css so the components that be reused elsewhere like a lib of components. I also did the css file and its imported is commented because it's easier and more legible to code like that to debug and then copying to the inline version.
+- For styling, I used inline css so the components that be reused elsewhere like a lib of components. This causes an issue that the "style" tag in not on the head of the document, but in the middle of the body, however it is a necessary trade off for the sake of reusability.
 - I also added the code to always verify the existence of something before using it, to avoid server crashing errors, such as:
 
   Sample.php
@@ -25,13 +25,6 @@ At the project folder I run the following command:
 ```sh
 php -S localhost:8000 -f Sample.php
 ```
-
-At another folder created a Sample2 to test the css customization on the component consumer:
-
-```sh
-php -S localhost:8001 -f Sample2.php
-```
-
 
 For simple and quick debug, specially in the beginning:
 
