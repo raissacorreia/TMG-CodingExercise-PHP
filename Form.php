@@ -4,14 +4,23 @@ class Form
 
     protected $_inputs;
 
+    /**
+     * Constructor for the Form class.
+     * Form is like a bag that holds all the inputs.
+     *
+     * Initializes a new form object with the given inputs.
+     *
+     * @param object $inputs The array of objects which are instances of class that extends Input.
+     */
     public function __construct(Input ...$inputs)
     {
         $this->_inputs = $inputs;
     }
 
     /**
-     *  adds an input instance to the collection of inputs managed by this 
-     * form object
+     *  Adds a new input to the form
+     * 
+     * @param Input $input The input to be added to the form.
      */
     public function addInput(Input $input)
     {
@@ -19,8 +28,10 @@ class Form
     }
 
     /**
-     *  iterates over all inputs managed by this form and returns false if 
-     * any of them don't validate
+     * Iterates over all inputs managed by this form and returns false
+     * if any of them don't validate according to their respective validation rules.
+     *
+     * @return boolean
      */
     public function validate()
     {
@@ -34,7 +45,9 @@ class Form
     }
 
     /**
-     * returns the value of the input by $name
+     * Returns the value of the input by $name, through its own getValue
+     *
+     * @return string
      */
     public function getValue($name)
     {
@@ -48,7 +61,9 @@ class Form
     }
 
     /**
-     *  draws the outer form element, and the markup for each input, one input per row
+     * Draws the outer form element, and the markup for each input
+     *
+     * @return void
      */
     public function display()
     {

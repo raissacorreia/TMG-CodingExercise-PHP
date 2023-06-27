@@ -8,6 +8,16 @@ abstract class Input
     abstract public function validate();
     abstract protected function _renderSetting();
 
+    /**
+     * Constructor for the Input class.
+     * Because it is an abstract class it serves as a default constructor for all subclasses.
+     *
+     * Initializes a new Input object with the given name, label, and initial value.
+     *
+     * @param string $name The name of the input.
+     * @param string $label The label of the input.
+     * @param string $initVal The initial value of the input (optional, defaults to an empty string).
+     */
     public function __construct($name, $label, $initVal)
     {
         $this->_name = $name;
@@ -16,7 +26,9 @@ abstract class Input
     }
 
     /**
-     * returns the name of this input
+     * Implements a simple getter method for the _name of a given input field.
+     *
+     * @return string _name
      */
     public function getName()
     {
@@ -25,9 +37,11 @@ abstract class Input
 
 
     /**
-     *  renders a row in the form for this input. All inputs have a label on the left,
-     *  and an area on the right where the actual
-     *  html form element is displayed (such as a text box, radio button, select, etc)
+     * renders a row in the form for this input. All inputs have a label on the left,
+     * and an area on the right where the actual
+     * html form element is displayed (such as a text box, radio button, select, etc)
+     * 
+     * @return void
      */
     public function render()
     {
@@ -36,7 +50,10 @@ abstract class Input
     }
 
     /**
-     * returns the current value managed by this input
+     * Implements a simple getter method for the _initVal of a given input field.
+     * Which is always the initial value of such field.
+     *
+     * @return string _initVal
      */
     public function getValue()
     {

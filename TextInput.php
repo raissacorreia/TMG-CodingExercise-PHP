@@ -29,7 +29,7 @@ class TextInput extends Input
     }
 
     /**
-     * Constructor for the Input class.
+     * Constructor for the TextInput class.
      *
      * Initializes a new Input object with the given name, label, and initial value.
      *
