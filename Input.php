@@ -37,15 +37,23 @@ abstract class Input
 
 
     /**
-     * renders a row in the form for this input. All inputs have a label on the left,
-     * and an area on the right where the actual
-     * html form element is displayed (such as a text box, radio button, select, etc)
+     * Renders the HTML section in common for all Inputs in this case is the label
+     * and its respective style class.
      * 
      * @return void
      */
     public function render()
     {
-        echo '<label for="' . $this->_name . '">' . $this->_label . '</label>';
+        echo '
+        <style>
+            .form-label {
+                display: block;
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+        </style>
+        <label class="form-label" for="' . $this->_name . '">' .
+            $this->_label . '</label>';
         $this->_renderSetting();
     }
 
