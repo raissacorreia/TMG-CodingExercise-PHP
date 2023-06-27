@@ -28,15 +28,16 @@
         if ($form->validate()) {
             $firstName = $form->getValue("firstname");
             $lastName = $form->getValue("lastname");
-            echo $firstName . " " . $lastName;
+            echo '<p>' . $firstName . " " . $lastName . '<p>';
         } else {
-            $form->display(true);
-            echo 'invalid data on input';
+            $form->display();
+            echo '<p>Invalid Data on Input, both fields are required to be filled with in</p>';
         }
-    } else {
-        $form->display(false);
     }
 
+    if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == "GET") {
+        $form->display();
+    }
     ?>
 </body>
 
