@@ -30,10 +30,11 @@
             $lastName = $form->getValue("lastname");
             echo $firstName . " " . $lastName;
         } else {
-            $form->display();
+            $form->display(true);
+            echo 'invalid data on input';
         }
     } else {
-        $form->display();
+        $form->display(false);
     }
 
     ?>

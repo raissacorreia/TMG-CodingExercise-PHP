@@ -3,40 +3,6 @@ require_once 'Input.php';
 class TextInput extends Input
 {
     /**
-     * Validates the input value.
-     *
-     * This method ensure this textfield is not empty.
-     *
-     * @return bool Returns true if the input value is not empty, false otherwise.
-     */
-    public function validate()
-    {
-        return !empty($this->_initVal);
-    }
-
-    /**
-     * Renders any additional settings for the TextInput.
-     *
-     * This is the specific section of the TextInput, which is the input itself in this example.
-     * 
-     * @return void
-     */
-    protected function _renderSetting()
-    {
-        echo '
-        <input 
-            class="form-input"
-            style="
-                display:block;
-                padding:10px;
-                margin-bottom: 10px;
-                font-size: 16px;
-                border: 1px solid #ccc;
-                border-radius: 4px;"
-            type="text" name="' . $this->_name . '" id="' . $this->_name . '" value="' . $this->_initVal . '">';
-    }
-
-    /**
      * Constructor for the TextInput class.
      *
      * Initializes a new Input object with the given name, label, and initial value.
@@ -50,5 +16,47 @@ class TextInput extends Input
         $this->_name = $name;
         $this->_label = $label;
         $this->_initVal = $value;
+    }
+
+    /**
+     * Validates the input value.
+     *
+     * This method ensure this textfield is not empty.
+     *
+     * @return bool Returns true if the input value is not empty, false otherwise.
+     */
+    public function validate()
+    {
+        if (isset($_POST[$this->_name])) {
+            return !empty($_POST[$this->_name]);
+        }
+        return !empty($this->_initVal);
+    }
+
+    /**
+     * Renders any additional settings for the TextInput.
+     *
+     * This is the specific section of the TextInput, which is the input itself in this example.
+     * 
+     * @return void
+     */
+    protected function _renderSetting()
+    {
+        echo
+        '
+        <input 
+            class="form-input"
+            style="
+                display:block;
+                padding:10px;
+                margin-bottom: 10px;
+                font-size: 16px;
+                border: 1px solid #ccc;
+                border-radius: 4px;"
+            type="text"
+            name="' . $this->_name .
+            '" id="' . $this->_name .
+            '" value="' . $this->_initVal .
+            '">';
     }
 }

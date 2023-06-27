@@ -64,6 +64,9 @@ abstract class Input
      */
     public function getValue()
     {
+        if (isset($_POST[$this->_name])) {
+            return $_POST[$this->_name];
+        }
         return $this->_initVal;
     }
 }
