@@ -24,18 +24,16 @@ class TextInput extends Input
     protected function _renderSetting()
     {
         echo '
-        <style>
-            .form-input {
-                display: block;
-                padding: 10px;
+        <input 
+            class="form-input"
+            style="
+                display:block;
+                padding:10px;
                 margin-bottom: 10px;
                 font-size: 16px;
                 border: 1px solid #ccc;
-                border-radius: 4px;
-            }
-        </style>
-        <input class="form-input" type="text" name="' . $this->_name .
-            '" id="' . $this->_name . '" value="' . $this->_initVal . '">';
+                border-radius: 4px;"
+            type="text" name="' . $this->_name . '" id="' . $this->_name . '" value="' . $this->_initVal . '">';
     }
 
     /**

@@ -14,31 +14,29 @@
 </head>
 
 <body>
-</body>
+    <?php
 
-</html>
+    require 'Form.php';
+    require 'TextInput.php';
 
-<?php
+    $form = new Form();
 
-require 'Form.php';
-require 'TextInput.php';
+    $form->addInput(new TextInput("firstname", "First Name", "Bruce"));
+    $form->addInput(new TextInput("lastname", "Last Name", "Wayne"));
 
-$form = new Form();
-
-$form->addInput(new TextInput("firstname", "First Name", "Bruce"));
-$form->addInput(new TextInput("lastname", "Last Name", "Wayne"));
-
-
-if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == "POST") {
-    if ($form->validate()) {
-        $firstName = $form->getValue("firstname");
-        $lastName = $form->getValue("lastname");
-        echo $firstName . " " . $lastName;
+    if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == "POST") {
+        if ($form->validate()) {
+            $firstName = $form->getValue("firstname");
+            $lastName = $form->getValue("lastname");
+            echo $firstName . " " . $lastName;
+        } else {
+            $form->display();
+        }
     } else {
         $form->display();
     }
-} else {
-    $form->display();
-}
 
-?>
+    ?>
+</body>
+
+</html>

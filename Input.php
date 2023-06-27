@@ -45,14 +45,13 @@ abstract class Input
     public function render()
     {
         echo '
-        <style>
-            .form-label {
+        <label 
+            class="form-label"
+            style="
                 display: block;
                 font-weight: bold;
-                margin-bottom: 5px;
-            }
-        </style>
-        <label class="form-label" for="' . $this->_name . '">' .
+                margin-bottom: 5px;"
+            for="' . $this->_name . '">' .
             $this->_label . '</label>';
         $this->_renderSetting();
     }
