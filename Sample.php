@@ -3,8 +3,14 @@
 
 <head>
     <title>Sample Form</title>
-    <!-- Before inline styles -->
-    <!-- <link rel="stylesheet" type="text/css" href="Sample.css"> -->
+    <style>
+        .form-container {
+            /* do not rewrite, this property already exists in CSS inline for form-container */
+            margin: 10rem;
+            /* this property don't exist originally so I can add it as a consumer of the component lib */
+            background-color: #f2f2f2;
+        }
+    </style>
 </head>
 
 <body>
