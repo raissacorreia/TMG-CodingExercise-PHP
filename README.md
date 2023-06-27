@@ -17,7 +17,7 @@
 ## What was not done and why
 
 - Validation on form fields. What is harmful or undesired as prompt depends on the context and the quality of the API that is receiving such data, therefore the validation is just that both fields need to be filled.
-- If the fields are not filled in, a message will appear on the bottom of the form.
+- If the fields are not filled in, a message will appear on the bottom of the form. On top of that I added a javascript that if the fields has an empty string at one of them, they will add a css class that will make the background color light red. This css comes from Sample so it's a css customization, just like the light gray background.
 - Only the stubbed methods: As specified on instructions "create a TextInput.php class in addition to filling out the stubbed methods for the library", because the idea was to fill the TODOs I didn't add more classes to have a more complete form template, and sticked to the basics. As a consequence the only OOP principle that was applicable was class abstraction
 
 ## Running

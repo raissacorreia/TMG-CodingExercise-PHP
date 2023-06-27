@@ -10,6 +10,10 @@
             /* this property don't exist originally so I can add it as a consumer of the component lib */
             background-color: #f2f2f2;
         }
+
+        .error {
+            background-color: #ffdddd;
+        }
     </style>
 </head>
 
@@ -39,6 +43,28 @@
         $form->display();
     }
     ?>
+
+    <script>
+        var firstNameInput = document.getElementById("firstname");
+        var lastNameInput = document.getElementById("lastname");
+
+        if (firstNameInput) {
+            firstNameInput.addEventListener("input", validateFields);
+        }
+        if (lastNameInput) {
+            lastNameInput.addEventListener("input", validateFields);
+        }
+
+        function validateFields() {
+            if (firstNameInput.value.trim() === "" || lastNameInput.value.trim() === "") {
+                firstNameInput.classList.add("error");
+                lastNameInput.classList.add("error");
+            } else {
+                firstNameInput.classList.remove("error");
+                lastNameInput.classList.remove("error");
+            }
+        };
+    </script>
 </body>
 
 </html>

@@ -43,7 +43,7 @@ class TextInput extends Input
     protected function _renderSetting()
     {
         echo '
-        <input 
+        <input
             class="form-input"
             style="
                 display:block;
